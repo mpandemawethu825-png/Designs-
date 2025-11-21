@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0f1014">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Sisonke Edutech - Digital Designs</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fb: '#1877F2', // Facebook Blue
+                        dark: {
+                            bg: '#0f1014',
+                            card: '#242526',
+                            hover: '#3a3b3c'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Icons & Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1014; /* Deep dark background */
+            color: #e4e6eb;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(36, 37, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transform: translateZ(0);
+        }
+
+        /* Fluid Background Gradient */
+        .fluid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%);
+            overflow: hidden;
+        }
+        .fluid-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: blob 10s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* Play Button Pulse */
+        .play-btn-pulse {
+            box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7);
+            animation: pulse-shadow 2s infinite;
+        }
+        @keyframes pulse-shadow {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(24, 119, 242, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col pb-24 relative selection:bg-fb selection:text-white">
+
+    <!-- Fluid Background Animation -->
+    <div class="fluid-bg">
+        <div class="fluid-orb bg-fb w-96 h-96 top-0 left-[-100px]"></div>
+        <div class="fluid-orb bg-purple-900 w-96 h-96 bottom-0 right-[-100px] animation-delay-2000"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-card sticky top-0 z-50 border-b border-white/10 !bg-dark-bg/80 !backdrop-blur-xl">
+        <div class="max-w-2xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight drop-shadow-sm">SISONKE EDUTECH</h1>
+                <p class="text-fb text-xs font-bold tracking-widest uppercase mt-1 glow">Digital Designs Division</p>
+            </div>
+            <!-- Header WhatsApp Link -->
+            <a href="https://wa.me/c/27815228419" target="_blank" class="text-green-500 hover:text-green-400 transition-colors">
+                <i class="fab fa-whatsapp text-3xl drop-shadow-lg"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-2xl mx-auto px-4 py-8 w-full space-y-10">
+
+        <!-- Intro -->
+        <section class="text-center space-y-2 mb-8">
+            <h2 class="text-3xl font-bold text-white drop-shadow-md">Our Portfolio</h2>
+            <p class="text-gray-400 font-light">Exclusive Digital Experiences</p>
+        </section>
+
+        <!-- Project 1: Graduation Program (LOADS IMMEDIATELY) -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-fb/20 flex items-center justify-center text-fb text-sm shadow-[0_0_10px_rgba(24,119,242,0.3)]">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Graduation Program</h3>
+                </div>
+            </div>
+            
+            <!-- Direct Embed (Loads immediately as requested) -->
+            <div class="w-full relative bg-dark-card">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
+                padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5); margin-top: 0; margin-bottom: 0; overflow: hidden;
+                will-change: transform;">
+                 <iframe loading="eager" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                   src="https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                 </iframe>
+               </div>
+            </div>
+        </article>
+
+        <!-- Project 2: Isimemo Somgidi (TAP TO PLAY) -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500 text-sm shadow-[0_0_10px_rgba(236,72,153,0.3)]">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Isimemo Somgidi</h3>
+                </div>
+            </div>
+
+            <!-- Facade Container 2 -->
+            <div id="container-2" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-2', 'https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed', '56.2500%')">
+                <!-- Aspect Ratio Preserver -->
+                <div style="padding-top: 56.2500%;"></div>
+
+                <!-- Placeholder UI -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-fb transition-colors bg-gradient-to-t from-black/60 to-transparent">
+                    <div class="w-16 h-16 bg-fb rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(24,119,242,0.5)] mb-3 play-btn-pulse text-white">
+                        <i class="fas fa-play ml-1 text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to Play Video</span>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Floating WhatsApp Action Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/c/27815228419" target="_blank" class="flex items-center space-x-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-5 py-3 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform transform hover:scale-105 backdrop-blur-sm border border-white/10">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span class="font-bold">View Catalogue</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-8 text-center text-gray-500 text-xs">
+        <p>&copy; 2025 Sisonke Edutech</p>
+    </footer>
+
+    <script>
+        // Global state
+        let activeContainerId = null;
+        
+        // Configuration
+        const embedConfigs = {
+            'container-2': {
+                ratio: '56.2500%',
+                icon: 'fa-play',
+                colorClass: 'text-white', // Icon color inside button
+                btnBgClass: 'bg-fb', // Button background
+                text: 'Tap to Play Video',
+                url: 'https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed'
+            }
+        };
+
+        function loadEmbed(containerId, url, ratio) {
+            // 1. If we clicked the already active one, do nothing
+            if (activeContainerId === containerId) return;
+
+            // 2. Load the new iframe
+            const container = document.getElementById(containerId);
+            
+            // Create the iframe string
+            const iframeHtml = `
+                <div style="position: relative; width: 100%; height: 0; padding-top: ${ratio}; padding-bottom: 0; overflow: hidden; will-change: transform;">
+                    <iframe loading="eager" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                        src="${url}" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+            `;
+            
+            // Inject
+            container.innerHTML = iframeHtml;
+            container.onclick = null; // Remove click listener
+            
+            // Update state
+            activeContainerId = containerId;
+        }
+
+        // Note: Reset logic removed as we only have one video that needs play/pause logic now.
+        // The first item is always loaded.
+    </script>
+
+</body>
+</html>
