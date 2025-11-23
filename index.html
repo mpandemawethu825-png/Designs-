@@ -19,7 +19,7 @@
             theme: {
                 extend: {
                     colors: {
-                        fb: '#1877F2', // Facebook Blue
+                        fb: '#1877F2',
                         dark: {
                             bg: '#0f1014',
                             card: '#242526',
@@ -49,7 +49,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f1014; /* Deep dark background */
+            background-color: #0f1014;
             color: #e4e6eb;
             -webkit-font-smoothing: antialiased;
         }
@@ -57,7 +57,6 @@
             font-family: 'Playfair Display', serif;
         }
         
-        /* Glassmorphism Card */
         .glass-card {
             background: rgba(36, 37, 38, 0.7);
             backdrop-filter: blur(12px);
@@ -67,7 +66,6 @@
             transform: translateZ(0);
         }
 
-        /* Fluid Background Gradient */
         .fluid-bg {
             position: fixed;
             top: 0;
@@ -86,7 +84,6 @@
             animation: blob 10s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
-        /* Play Button Pulse */
         .play-btn-pulse {
             box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7);
             animation: pulse-shadow 2s infinite;
@@ -113,7 +110,6 @@
                 <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight drop-shadow-sm">SISONKE EDUTECH</h1>
                 <p class="text-fb text-xs font-bold tracking-widest uppercase mt-1 glow">Digital Designs Division</p>
             </div>
-            <!-- Header WhatsApp Link -->
             <a href="https://wa.me/c/27815228419" target="_blank" class="text-green-500 hover:text-green-400 transition-colors">
                 <i class="fab fa-whatsapp text-3xl drop-shadow-lg"></i>
             </a>
@@ -140,7 +136,6 @@
                 </div>
             </div>
             
-            <!-- Direct Embed (Loads immediately as requested) -->
             <div class="w-full relative bg-dark-card">
                 <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
                 padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5); margin-top: 0; margin-bottom: 0; overflow: hidden;
@@ -152,7 +147,7 @@
             </div>
         </article>
 
-        <!-- Project 2: Isimemo Somgidi (TAP TO PLAY) -->
+        <!-- Project 2: Isimemo Somgidi Video -->
         <article class="glass-card rounded-2xl overflow-hidden">
             <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
                 <div class="flex items-center space-x-3">
@@ -163,17 +158,123 @@
                 </div>
             </div>
 
-            <!-- Facade Container 2 -->
             <div id="container-2" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-2', 'https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed', '56.2500%')">
-                <!-- Aspect Ratio Preserver -->
                 <div style="padding-top: 56.2500%;"></div>
-
-                <!-- Placeholder UI -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-fb transition-colors bg-gradient-to-t from-black/60 to-transparent">
                     <div class="w-16 h-16 bg-fb rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(24,119,242,0.5)] mb-3 play-btn-pulse text-white">
                         <i class="fas fa-play ml-1 text-xl"></i>
                     </div>
                     <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to Play Video</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 3: Pre-School Graduation Program -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-sm shadow-[0_0_10px_rgba(168,85,247,0.3)]">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Pre-School Graduation Program</h3>
+                </div>
+            </div>
+            
+            <div id="container-3" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-3', 'https://www.canva.com/design/DAG2rrCQ0R0/3JiLo_kKGE3j-C8Fh59IDg/view?embed', '140.9524%')">
+                <div style="padding-top: 140.9524%;"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-purple-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] mb-3 play-btn-pulse text-white">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 4: Perfumes Catalogue -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-pink-400/20 flex items-center justify-center text-pink-400 text-sm shadow-[0_0_10px_rgba(244,114,182,0.3)]">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Perfumes Catalogue</h3>
+                </div>
+            </div>
+            
+            <div id="container-4" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-4', 'https://www.canva.com/design/DAGsnFvMecU/ExefSlf5ELISz5NspDA1hw/view?embed', '100.0000%')">
+                <div style="padding-top: 100.0000%;"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-pink-400 transition-colors bg-gradient-to-t from-black/60 to-transparent">
+                    <div class="w-16 h-16 bg-pink-400 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(244,114,182,0.5)] mb-3 play-btn-pulse text-white">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 5: Local Restaurant Menu -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 text-sm shadow-[0_0_10px_rgba(249,115,22,0.3)]">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Local Restaurant Menu</h3>
+                </div>
+            </div>
+            
+            <div id="container-5" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-5', 'https://www.canva.com/design/DAG1EQrdOaw/f4ne_Jmax4sh-f1ZNaGTHA/view?embed', '141.4286%')">
+                <div style="padding-top: 141.4286%;"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-orange-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] mb-3 play-btn-pulse text-white">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 6: Birthday Invitation -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-500 text-sm shadow-[0_0_10px_rgba(234,179,8,0.3)]">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Birthday Invitation</h3>
+                </div>
+            </div>
+            
+            <div id="container-6" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-6', 'https://www.canva.com/design/DAG4qq-BdYI/aOqyF3i8FN5_jG3F0fRlew/view?embed', '140.9524%')">
+                <div style="padding-top: 140.9524%;"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-yellow-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(234,179,8,0.5)] mb-3 play-btn-pulse text-white">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 7: Church Poster -->
+        <article class="glass-card rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-500 text-sm shadow-[0_0_10px_rgba(99,102,241,0.3)]">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-100">Church Poster</h3>
+                </div>
+            </div>
+            
+            <div id="container-7" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-7', 'https://www.canva.com/design/DAG3BScPEH8/3qaigsUFW0dmJvyiTX6_eQ/view?embed', '125.0000%')">
+                <div style="padding-top: 125.0000%;"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-indigo-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.5)] mb-3 play-btn-pulse text-white">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
                 </div>
             </div>
         </article>
@@ -194,29 +295,13 @@
     </footer>
 
     <script>
-        // Global state
         let activeContainerId = null;
-        
-        // Configuration
-        const embedConfigs = {
-            'container-2': {
-                ratio: '56.2500%',
-                icon: 'fa-play',
-                colorClass: 'text-white', // Icon color inside button
-                btnBgClass: 'bg-fb', // Button background
-                text: 'Tap to Play Video',
-                url: 'https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed'
-            }
-        };
 
         function loadEmbed(containerId, url, ratio) {
-            // 1. If we clicked the already active one, do nothing
             if (activeContainerId === containerId) return;
 
-            // 2. Load the new iframe
             const container = document.getElementById(containerId);
             
-            // Create the iframe string
             const iframeHtml = `
                 <div style="position: relative; width: 100%; height: 0; padding-top: ${ratio}; padding-bottom: 0; overflow: hidden; will-change: transform;">
                     <iframe loading="eager" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
@@ -225,16 +310,11 @@
                 </div>
             `;
             
-            // Inject
             container.innerHTML = iframeHtml;
-            container.onclick = null; // Remove click listener
+            container.onclick = null;
             
-            // Update state
             activeContainerId = containerId;
         }
-
-        // Note: Reset logic removed as we only have one video that needs play/pause logic now.
-        // The first item is always loaded.
     </script>
 
 </body>
