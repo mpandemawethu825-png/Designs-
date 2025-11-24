@@ -1,321 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0f1014">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Sisonke Edutech - Digital Designs</title>
-    
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        fb: '#1877F2',
-                        dark: {
-                            bg: '#0f1014',
-                            card: '#242526',
-                            hover: '#3a3b3c'
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
-                    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1014">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Sisonke Edutech - Digital Designs</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                fb: '#1877F2',
+                dark: {
+                    bg: '#0f1014',
+                    card: '#242526',
+                    hover: '#3a3b3c'
+                }
+            },
+            animation: {
+                'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+                blob: {
+                    '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                    '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                    '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                    '100%': { transform: 'translate(0px, 0px) scale(1)' },
                 }
             }
         }
-    </script>
-    
-    <!-- Icons & Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    }
+}
+</script>
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f1014;
-            color: #e4e6eb;
-            -webkit-font-smoothing: antialiased;
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .glass-card {
-            background: rgba(36, 37, 38, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            transform: translateZ(0);
-        }
+<!-- Icons & Fonts -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        .fluid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%);
-            overflow: hidden;
-        }
-        .fluid-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: blob 10s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-
-        .play-btn-pulse {
-            box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7);
-            animation: pulse-shadow 2s infinite;
-        }
-        @keyframes pulse-shadow {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(24, 119, 242, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
-        }
-    </style>
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f1014;
+    color: #e4e6eb;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+}
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+.glass-card {
+    background: rgba(36, 37, 38, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transform: translateZ(0);
+}
+.fluid-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%);
+    overflow: hidden;
+}
+.fluid-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: blob 10s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.play-btn-pulse {
+    box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7);
+    animation: pulse-shadow 2s infinite;
+}
+@keyframes pulse-shadow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(24, 119, 242, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
+}
+/* Horizontal Scroll Slider */
+.scroll-snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.scroll-snap-align-start {
+    scroll-snap-align: start;
+}
+</style>
 </head>
+
 <body class="min-h-screen flex flex-col pb-24 relative selection:bg-fb selection:text-white">
 
-    <!-- Fluid Background Animation -->
-    <div class="fluid-bg">
-        <div class="fluid-orb bg-fb w-96 h-96 top-0 left-[-100px]"></div>
-        <div class="fluid-orb bg-purple-900 w-96 h-96 bottom-0 right-[-100px] animation-delay-2000"></div>
-    </div>
+<!-- Fluid Background Animation -->
+<div class="fluid-bg">
+    <div class="fluid-orb bg-fb w-96 h-96 top-0 left-[-100px]"></div>
+    <div class="fluid-orb bg-purple-900 w-96 h-96 bottom-0 right-[-100px] animation-delay-2000"></div>
+</div>
 
-    <!-- Header -->
-    <header class="glass-card sticky top-0 z-50 border-b border-white/10 !bg-dark-bg/80 !backdrop-blur-xl">
-        <div class="max-w-2xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight drop-shadow-sm">SISONKE EDUTECH</h1>
-                <p class="text-fb text-xs font-bold tracking-widest uppercase mt-1 glow">Digital Designs Division</p>
-            </div>
-            <a href="https://wa.me/c/27815228419" target="_blank" class="text-green-500 hover:text-green-400 transition-colors">
-                <i class="fab fa-whatsapp text-3xl drop-shadow-lg"></i>
-            </a>
+<!-- Banner -->
+<div class="glass-card mx-auto my-6 p-6 rounded-3xl w-full max-w-3xl">
+    <h1 class="text-3xl sm:text-4xl font-bold text-white drop-shadow-md">SISONKE EDUTECH</h1>
+    <p class="text-fb font-semibold mt-2">Digital Designs Division</p>
+</div>
+
+<!-- Main Content Slider -->
+<main class="flex-grow max-w-3xl mx-auto px-4 py-8 w-full">
+  <section class="text-center space-y-2 mb-8">
+      <h2 class="text-3xl font-bold text-white drop-shadow-md">Our Portfolio</h2>
+      <p class="text-gray-400 font-light">Exclusive Digital Experiences</p>
+  </section>
+
+  <!-- Slider Container -->
+  <div class="flex overflow-x-auto scroll-snap-x-mandatory space-x-6 py-4 px-2 justify-center">
+
+    <!-- Slides: repeat for all 7 projects -->
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-fb/20 flex items-center justify-center text-fb text-sm shadow-[0_0_10px_rgba(24,119,242,0.3)]">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Graduation Program</h3>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex-grow max-w-2xl mx-auto px-4 py-8 w-full space-y-10">
-
-        <!-- Intro -->
-        <section class="text-center space-y-2 mb-8">
-            <h2 class="text-3xl font-bold text-white drop-shadow-md">Our Portfolio</h2>
-            <p class="text-gray-400 font-light">Exclusive Digital Experiences</p>
-        </section>
-
-        <!-- Project 1: Graduation Program (LOADS IMMEDIATELY) -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-fb/20 flex items-center justify-center text-fb text-sm shadow-[0_0_10px_rgba(24,119,242,0.3)]">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Graduation Program</h3>
-                </div>
-            </div>
-            
-            <div class="w-full relative bg-dark-card">
-                <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
-                padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5); margin-top: 0; margin-bottom: 0; overflow: hidden;
-                will-change: transform;">
-                 <iframe loading="eager" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                   src="https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-                 </iframe>
-               </div>
-            </div>
-        </article>
-
-        <!-- Project 2: Isimemo Somgidi Video -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500 text-sm shadow-[0_0_10px_rgba(236,72,153,0.3)]">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Isimemo Somgidi</h3>
-                </div>
-            </div>
-
-            <div id="container-2" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-2', 'https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed', '56.2500%')">
-                <div style="padding-top: 56.2500%;"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-fb transition-colors bg-gradient-to-t from-black/60 to-transparent">
-                    <div class="w-16 h-16 bg-fb rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(24,119,242,0.5)] mb-3 play-btn-pulse text-white">
-                        <i class="fas fa-play ml-1 text-xl"></i>
-                    </div>
-                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to Play Video</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project 3: Pre-School Graduation Program -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-sm shadow-[0_0_10px_rgba(168,85,247,0.3)]">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Pre-School Graduation Program</h3>
-                </div>
-            </div>
-            
-            <div id="container-3" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-3', 'https://www.canva.com/design/DAG2rrCQ0R0/3JiLo_kKGE3j-C8Fh59IDg/view?embed', '140.9524%')">
-                <div style="padding-top: 140.9524%;"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-purple-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
-                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] mb-3 play-btn-pulse text-white">
-                        <i class="fas fa-eye text-xl"></i>
-                    </div>
-                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project 4: Perfumes Catalogue -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-pink-400/20 flex items-center justify-center text-pink-400 text-sm shadow-[0_0_10px_rgba(244,114,182,0.3)]">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Perfumes Catalogue</h3>
-                </div>
-            </div>
-            
-            <div id="container-4" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-4', 'https://www.canva.com/design/DAGsnFvMecU/ExefSlf5ELISz5NspDA1hw/view?embed', '100.0000%')">
-                <div style="padding-top: 100.0000%;"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-pink-400 transition-colors bg-gradient-to-t from-black/60 to-transparent">
-                    <div class="w-16 h-16 bg-pink-400 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(244,114,182,0.5)] mb-3 play-btn-pulse text-white">
-                        <i class="fas fa-eye text-xl"></i>
-                    </div>
-                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project 5: Local Restaurant Menu -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 text-sm shadow-[0_0_10px_rgba(249,115,22,0.3)]">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Local Restaurant Menu</h3>
-                </div>
-            </div>
-            
-            <div id="container-5" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-5', 'https://www.canva.com/design/DAG1EQrdOaw/f4ne_Jmax4sh-f1ZNaGTHA/view?embed', '141.4286%')">
-                <div style="padding-top: 141.4286%;"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-orange-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
-                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] mb-3 play-btn-pulse text-white">
-                        <i class="fas fa-eye text-xl"></i>
-                    </div>
-                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project 6: Birthday Invitation -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-500 text-sm shadow-[0_0_10px_rgba(234,179,8,0.3)]">
-                        <i class="fas fa-birthday-cake"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Birthday Invitation</h3>
-                </div>
-            </div>
-            
-            <div id="container-6" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-6', 'https://www.canva.com/design/DAG4qq-BdYI/aOqyF3i8FN5_jG3F0fRlew/view?embed', '140.9524%')">
-                <div style="padding-top: 140.9524%;"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-yellow-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
-                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(234,179,8,0.5)] mb-3 play-btn-pulse text-white">
-                        <i class="fas fa-eye text-xl"></i>
-                    </div>
-                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Project 7: Church Poster -->
-        <article class="glass-card rounded-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/5 flex items-center justify-between bg-white/5">
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-500 text-sm shadow-[0_0_10px_rgba(99,102,241,0.3)]">
-                        <i class="fas fa-church"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-100">Church Poster</h3>
-                </div>
-            </div>
-            
-            <div id="container-7" class="w-full bg-dark-card relative group cursor-pointer" onclick="loadEmbed('container-7', 'https://www.canva.com/design/DAG3BScPEH8/3qaigsUFW0dmJvyiTX6_eQ/view?embed', '125.0000%')">
-                <div style="padding-top: 125.0000%;"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 group-hover:text-indigo-500 transition-colors bg-gradient-to-t from-black/60 to-transparent">
-                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.5)] mb-3 play-btn-pulse text-white">
-                        <i class="fas fa-eye text-xl"></i>
-                    </div>
-                    <span class="font-semibold text-sm uppercase tracking-wide text-gray-300 drop-shadow-md">Tap to View</span>
-                </div>
-            </div>
-        </article>
-
-    </main>
-
-    <!-- Floating WhatsApp Action Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/c/27815228419" target="_blank" class="flex items-center space-x-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-5 py-3 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform transform hover:scale-105 backdrop-blur-sm border border-white/10">
-            <i class="fab fa-whatsapp text-2xl"></i>
-            <span class="font-bold">View Catalogue</span>
-        </a>
+      </div>
+      <iframe src="https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-auto py-8 text-center text-gray-500 text-xs">
-        <p>&copy; 2025 Sisonke Edutech</p>
-    </footer>
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500 text-sm shadow-[0_0_10px_rgba(236,72,153,0.3)]">
+            <i class="fas fa-play"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Isimemo Somgidi</h3>
+        </div>
+      </div>
+      <iframe src="https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
+    </div>
 
-    <script>
-        let activeContainerId = null;
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-sm shadow-[0_0_10px_rgba(168,85,247,0.3)]">
+            <i class="fas fa-child"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Pre-School Graduation</h3>
+        </div>
+      </div>
+      <iframe src="https://www.canva.com/design/DAG2rrCQ0R0/3JiLo_kKGE3j-C8Fh59IDg/view?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
+    </div>
 
-        function loadEmbed(containerId, url, ratio) {
-            if (activeContainerId === containerId) return;
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-pink-400/20 flex items-center justify-center text-pink-400 text-sm shadow-[0_0_10px_rgba(244,114,182,0.3)]">
+            <i class="fas fa-spray-can"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Perfumes Catalogue</h3>
+        </div>
+      </div>
+      <iframe src="https://www.canva.com/design/DAGsnFvMecU/ExefSlf5ELISz5NspDA1hw/view?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
+    </div>
 
-            const container = document.getElementById(containerId);
-            
-            const iframeHtml = `
-                <div style="position: relative; width: 100%; height: 0; padding-top: ${ratio}; padding-bottom: 0; overflow: hidden; will-change: transform;">
-                    <iframe loading="eager" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-                        src="${url}" allowfullscreen="allowfullscreen" allow="fullscreen">
-                    </iframe>
-                </div>
-            `;
-            
-            container.innerHTML = iframeHtml;
-            container.onclick = null;
-            
-            activeContainerId = containerId;
-        }
-    </script>
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500 text-sm shadow-[0_0_10px_rgba(249,115,22,0.3)]">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Local Restaurant Menu</h3>
+        </div>
+      </div>
+      <iframe src="https://www.canva.com/design/DAG1EQrdOaw/f4ne_Jmax4sh-f1ZNaGTHA/view?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
+    </div>
+
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-500 text-sm shadow-[0_0_10px_rgba(234,179,8,0.3)]">
+            <i class="fas fa-birthday-cake"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Birthday Invitation</h3>
+        </div>
+      </div>
+      <iframe src="https://www.canva.com/design/DAG4qq-BdYI/aOqyF3i8FN5_jG3F0fRlew/view?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
+    </div>
+
+    <div class="glass-card min-w-[300px] sm:min-w-[400px] rounded-2xl flex-shrink-0 scroll-snap-align-start overflow-hidden">
+      <div class="p-4 border-b border-white/5 flex items-center justify-center bg-white/5">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-500 text-sm shadow-[0_0_10px_rgba(99,102,241,0.3)]">
+            <i class="fas fa-church"></i>
+          </div>
+          <h3 class="font-bold text-gray-100">Church Poster</h3>
+        </div>
+      </div>
+      <iframe src="https://www.canva.com/design/DAG3BScPEH8/3qaigsUFW0dmJvyiTX6_eQ/view?embed" class="w-full h-72 sm:h-96" allowfullscreen></iframe>
+    </div>
+
+  </div>
+</main>
+
+<!-- Floating WhatsApp Action Button -->
+<div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/c/27815228419" target="_blank" class="flex items-center space-x-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-5 py-3 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform transform hover:scale-105 backdrop-blur-sm border border-white/10">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-bold">View Catalogue</span>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer class="mt-auto py-8 text-center text-gray-500 text-xs">
+    <p>&copy; 2025 Sisonke Edutech</p>
+</footer>
 
 </body>
-</html>
+    </html>
