@@ -4,84 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f1014">
-<title>Sisonke Edutech - Digital Designs</title>
+<title>Sisonke Edutech - Portfolio Slides</title>
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                fb: '#1877F2',
-                dark: {
-                    bg: '#0f1014',
-                    card: '#242526',
-                    hover: '#3a3b3c'
-                }
-            },
-            animation: {
-                'blob': 'blob 7s infinite',
-            },
-            keyframes: {
-                blob: {
-                    '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                    '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                    '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                    '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                }
-            }
-        }
-    }
-}
-</script>
-
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 <style>
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0f1014;
-    color: #e4e6eb;
-    -webkit-font-smoothing: antialiased;
-}
-h1,h2,h3 { font-family: 'Playfair Display', serif; }
-.glass-card {
-    background: rgba(36, 37, 38, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
-    transform: translateZ(0);
-}
-.fluid-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background: radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%);
-    overflow: hidden;
-}
-.fluid-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-    animation: blob 10s infinite cubic-bezier(0.4,0,0.2,1);
-}
-.play-btn-pulse {
-    box-shadow: 0 0 0 0 rgba(24,119,242,0.7);
-    animation: pulse-shadow 2s infinite;
-}
-@keyframes pulse-shadow {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24,119,242,0.7);}
-    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(24,119,242,0);}
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(24,119,242,0);}
-}
+body { font-family:'Inter',sans-serif; background:#0f1014; color:#e4e6eb; -webkit-font-smoothing: antialiased;}
+h1,h2,h3 { font-family:'Playfair Display',serif;}
+.glass-card { background: rgba(36,37,38,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.08); box-shadow:0 8px 32px 0 rgba(0,0,0,0.3);}
+.fluid-bg { position: fixed; top:0; left:0; width:100vw; height:100vh; z-index:-1; background: radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%); overflow:hidden;}
+.fluid-orb { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.4; animation: blob 10s infinite cubic-bezier(0.4,0,0.2,1);}
+@keyframes blob {0% { transform: translate(0px,0px) scale(1); } 33% { transform: translate(30px,-50px) scale(1.1);} 66% { transform: translate(-20px,20px) scale(0.9);} 100% { transform: translate(0px,0px) scale(1);}}
+/* Slider */
+.slider { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling: touch; gap:1rem; padding-bottom:1rem; scroll-behavior: smooth;}
+.slide { flex:0 0 90%; scroll-snap-align:center; display:flex; flex-direction:column; gap:1rem;}
+.slide::-webkit-scrollbar { display:none;}
+.bg-fb { background-color: #1877F2; }
 </style>
 </head>
 <body class="min-h-screen flex flex-col pb-24 relative selection:bg-fb selection:text-white">
@@ -89,54 +30,82 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
 <!-- Fluid Background -->
 <div class="fluid-bg">
     <div class="fluid-orb bg-fb w-96 h-96 top-0 left-[-100px]"></div>
-    <div class="fluid-orb bg-purple-900 w-96 h-96 bottom-0 right-[-100px] animation-delay-2000"></div>
+    <div class="fluid-orb bg-white w-96 h-96 bottom-0 right-[-100px] animation-delay-2000"></div>
 </div>
 
-<!-- Header with Banner -->
-<header class="glass-card sticky top-0 z-50 border-b border-white/10 !bg-dark-bg/80 !backdrop-blur-xl">
-    <div class="max-w-3xl mx-auto px-4 py-4 text-center">
-        <h1 class="text-3xl sm:text-4xl font-bold text-white drop-shadow-md">SISONKE EDUTECH</h1>
-        <p class="text-fb text-sm sm:text-base font-bold tracking-widest uppercase mt-1">Digital Designs Division</p>
-        <img src="https://via.placeholder.com/800x200.png?text=Our+Creative+Portfolio" alt="Banner" class="mx-auto mt-4 rounded-xl shadow-lg">
+<!-- Header -->
+<header class="glass-card sticky top-0 z-50 border-b border-white/10 !bg-dark-bg/80 !backdrop-blur-xl text-center">
+    <div class="max-w-2xl mx-auto px-4 py-4">
+        <h1 class="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">SISONKE EDUTECH</h1>
+        <p class="text-fb text-xs font-bold tracking-widest uppercase mt-1 glow">Digital Designs Division</p>
     </div>
 </header>
 
 <!-- Main Content -->
-<main class="flex-grow max-w-3xl mx-auto px-4 py-8 w-full space-y-10 text-center">
+<main class="flex-grow max-w-2xl mx-auto px-4 py-8 w-full">
 
-    <section class="space-y-2 mb-8">
-        <h2 class="text-3xl font-bold text-white drop-shadow-md">Our Portfolio</h2>
-        <p class="text-gray-400 font-light">Exclusive Digital Experiences</p>
+    <section class="text-center space-y-2 mb-8">
+        <h2 class="text-3xl font-bold text-white drop-shadow-md">Our Portfolio Slides</h2>
+        <p class="text-gray-400 font-light">Scroll horizontally to view all projects</p>
     </section>
 
-    <!-- Portfolio Projects -->
-    <div class="space-y-8">
-
-        <!-- Project Template -->
-        <div id="container-1" class="glass-card rounded-2xl relative cursor-pointer mx-auto max-w-xl overflow-hidden" onclick="loadEmbed('container-1','https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed','141.4286%')">
-            <img src="https://via.placeholder.com/600x850.png?text=Graduation+Program" class="w-full h-auto object-cover" alt="Graduation Program Preview">
-            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 hover:bg-black/40 transition-colors">
-                <div class="w-16 h-16 bg-fb rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(24,119,242,0.5)] mb-3 play-btn-pulse text-white">
-                    <i class="fas fa-play text-xl"></i>
-                </div>
-                <span class="text-white font-semibold text-sm">Tap to Load</span>
+    <!-- Slider -->
+    <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Graduation Program</h3>
+            <div class="relative w-full" style="padding-top:141.4286%;">
+                <iframe src="https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Duplicate this block for each project with appropriate preview image, URL, and ratio -->
-        <div id="container-2" class="glass-card rounded-2xl relative cursor-pointer mx-auto max-w-xl overflow-hidden" onclick="loadEmbed('container-2','https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed','56.25%')">
-            <img src="https://via.placeholder.com/600x338.png?text=Isimemo+Somgidi+Video" class="w-full h-auto object-cover" alt="Isimemo Somgidi Preview">
-            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 hover:bg-black/40 transition-colors">
-                <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(236,72,153,0.5)] mb-3 play-btn-pulse text-white">
-                    <i class="fas fa-play text-xl"></i>
-                </div>
-                <span class="text-white font-semibold text-sm">Tap to Load</span>
+        <!-- Slide 2 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Isimemo Somgidi</h3>
+            <div class="relative w-full" style="padding-top:56.25%;">
+                <iframe src="https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Add container-3 to container-7 similarly -->
-        <!-- Use appropriate preview images for fast loading -->
+        <!-- Slide 3 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Pre-School Graduation</h3>
+            <div class="relative w-full" style="padding-top:140.9524%;">
+                <iframe src="https://www.canva.com/design/DAG2rrCQ0R0/3JiLo_kKGE3j-C8Fh59IDg/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
+            </div>
+        </div>
 
+        <!-- Slide 4 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Perfumes Catalogue</h3>
+            <div class="relative w-full" style="padding-top:100%;">
+                <iframe src="https://www.canva.com/design/DAGsnFvMecU/ExefSlf5ELISz5NspDA1hw/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Local Restaurant Menu</h3>
+            <div class="relative w-full" style="padding-top:141.4286%;">
+                <iframe src="https://www.canva.com/design/DAG1EQrdOaw/f4ne_Jmax4sh-f1ZNaGTHA/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Birthday Invitation</h3>
+            <div class="relative w-full" style="padding-top:140.9524%;">
+                <iframe src="https://www.canva.com/design/DAG4qq-BdYI/aOqyF3i8FN5_jG3F0fRlew/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide glass-card p-4">
+            <h3 class="text-xl font-bold text-white mb-2">Church Poster</h3>
+            <div class="relative w-full" style="padding-top:125%;">
+                <iframe src="https://www.canva.com/design/DAG3BScPEH8/3qaigsUFW0dmJvyiTX6_eQ/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 </main>
 
@@ -145,21 +114,5 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
     <p>&copy; 2025 Sisonke Edutech</p>
 </footer>
 
-<script>
-let activeContainerId = null;
-
-function loadEmbed(containerId, url, ratio){
-    if(activeContainerId===containerId) return;
-
-    const container = document.getElementById(containerId);
-    container.innerHTML = `
-        <div style="position: relative; width: 100%; height: 0; padding-top: ${ratio}; overflow: hidden;">
-            <iframe loading="eager" style="position: absolute; width: 100%; height: 100%; top:0; left:0; border:none;" src="${url}" allowfullscreen></iframe>
-        </div>
-    `;
-    activeContainerId = containerId;
-}
-</script>
-
 </body>
-</html>
+    </html>
