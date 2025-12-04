@@ -4,115 +4,191 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f1014">
-<title>Sisonke Edutech - Portfolio Slides</title>
+<title>Sisonke Edutech - Portfolio</title>
 
-<!-- Tailwind CSS -->
+<!-- Pre-connect to Canva for faster iframes -->
+<link rel="preconnect" href="https://www.canva.com">
+
+<!-- Tailwind + Fonts (CDN with faster fallback) -->
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 <style>
-body { font-family:'Inter',sans-serif; background:#0f1014; color:#e4e6eb; -webkit-font-smoothing: antialiased;}
-h1,h2,h3 { font-family:'Playfair Display',serif;}
-.glass-card { background: rgba(36,37,38,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border:1px solid rgba(255,255,255,0.08); box-shadow:0 8px 32px 0 rgba(0,0,0,0.3);}
-.fluid-bg { position: fixed; top:0; left:0; width:100vw; height:100vh; z-index:-1; background: radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%); overflow:hidden;}
-.fluid-orb { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.4; animation: blob 10s infinite cubic-bezier(0.4,0,0.2,1);}
-@keyframes blob {0% { transform: translate(0px,0px) scale(1); } 33% { transform: translate(30px,-50px) scale(1.1);} 66% { transform: translate(-20px,20px) scale(0.9);} 100% { transform: translate(0px,0px) scale(1);}}
-/* Slider */
-.slider { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling: touch; gap:1rem; padding-bottom:1rem; scroll-behavior: smooth;}
-.slide { flex:0 0 90%; scroll-snap-align:center; display:flex; flex-direction:column; gap:1rem;}
-.slide::-webkit-scrollbar { display:none;}
-.bg-fb { background-color: #1877F2; }
+  :root { --fb: #1877F2; }
+  body { font-family:'Inter',sans-serif; background:#0f1014; color:#e4e6eb; -webkit-font-smoothing: antialiased; margin:0; }
+  h1,h2,h3 { font-family:'Playfair Display',serif; }
+  .glass { background:rgba(36,37,38,0.65); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.08); }
+  .fluid-bg { position:fixed; inset:0; z-index:-1; background:radial-gradient(circle at 50% 50%, #1a1b1f 0%, #0f1014 100%); }
+  .orb { position:absolute; border-radius:50%; filter:blur(90px); opacity:0.35; pointer-events:none; }
+  @keyframes float { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(30px,-40px) scale(1.1); } }
+  .orb:nth-child(1) { width:400px; height:400px; background:var(--fb); top:-10%; left:-10%; animation:float 20s infinite ease-in-out; }
+  .orb:nth-child(2) { width:500px; height:500px; background:#ffffff; bottom:-15%; right:-15%; animation:float 25s infinite ease-in-out reverse; }
+
+  /* Slider */
+  .slider { 
+    display:flex; 
+    overflow-x:auto; 
+    scroll-snap-type:x mandatory; 
+    gap:1rem; 
+    padding:1rem 1rem 2rem;
+    scroll-padding:0 1rem;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .slider::-webkit-scrollbar { display:none; }
+  .slide { 
+    flex:0 0 86vw; 
+    max-width:400px;
+    scroll-snap-align:center; 
+  }
+  .iframe-container {
+    position:relative; 
+    width:100%; 
+    background:#000; 
+    border-radius:12px; 
+    overflow:hidden;
+    aspect-ratio: 7 / 10; /* default for most designs */
+  }
+  iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; opacity:0; transition:opacity 0.4s; }
+  iframe.loaded { opacity:1; }
+
+  /* Dots */
+  .dots { display:flex; gap:8px; justify-content:center; margin-top:1rem; }
+  .dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.3); transition:all 0.3s; }
+  .dot.active { background:var(--fb); transform:scale(1.4); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .orb { animation:none; }
+  }
 </style>
 </head>
-<body class="min-h-screen flex flex-col pb-24 relative selection:bg-fb selection:text-white">
 
-<!-- Fluid Background -->
-<div class="fluid-bg">
-    <div class="fluid-orb bg-fb w-96 h-96 top-0 left-[-100px]"></div>
-    <div class="fluid-orb bg-white w-96 h-96 bottom-0 right-[-100px] animation-delay-2000"></div>
-</div>
+<body class="min-h-screen flex flex-col selection:bg-[var(--fb)] selection:text-white">
+  <div class="fluid-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
 
-<!-- Header -->
-<header class="glass-card sticky top-0 z-50 border-b border-white/10 !bg-dark-bg/80 !backdrop-blur-xl text-center">
-    <div class="max-w-2xl mx-auto px-4 py-4">
-        <h1 class="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">SISONKE EDUTECH</h1>
-        <p class="text-fb text-xs font-bold tracking-widest uppercase mt-1 glow">Digital Designs Division</p>
+  <!-- Header -->
+  <header class="glass sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-2xl mx-auto px-4 py-5 text-center">
+      <h1 class="text-2xl sm:text-3xl font-bold text-white">SISONKE EDUTECH</h1>
+      <p class="text-[var(--fb)] text-xs font-bold tracking-widest uppercase mt-1">Digital Designs Division</p>
     </div>
-</header>
+  </header>
 
-<!-- Main Content -->
-<main class="flex-grow max-w-2xl mx-auto px-4 py-8 w-full">
-
-    <section class="text-center space-y-2 mb-8">
-        <h2 class="text-3xl font-bold text-white drop-shadow-md">Our Portfolio Slides</h2>
-        <p class="text-gray-400 font-light">Scroll horizontally to view all projects</p>
+  <main class="flex-1 max-w-5xl mx-auto px-4 py-8">
+    <section class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-white mb-2">Our Portfolio</h2>
+      <p class="text-gray-400">← Swipe to explore →</p>
     </section>
 
     <!-- Slider -->
-    <div class="slider">
-        <!-- Slide 1 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Graduation Program</h3>
-            <div class="relative w-full" style="padding-top:141.4286%;">
-                <iframe src="https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+    <div class="slider" id="slider">
+      <!-- Slide 1 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Graduation Program</h3>
+        <div class="iframe-container shadow-2xl">
+          <iframe data-src="https://www.canva.com/design/DAG2Cdf6yts/8unJkH0mEXz_XQFJJ5uLlQ/view?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
 
-        <!-- Slide 2 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Isimemo Somgidi</h3>
-            <div class="relative w-full" style="padding-top:56.25%;">
-                <iframe src="https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+      <!-- Slide 2 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Isimemo Somgidi</h3>
+        <div class="iframe-container shadow-2xl" style="aspect-ratio:16/9;">
+          <iframe data-src="https://www.canva.com/design/DAG3HtwELlY/LFl2Bolc4sYZsLupROiWFA/watch?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
 
-        <!-- Slide 3 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Pre-School Graduation</h3>
-            <div class="relative w-full" style="padding-top:140.9524%;">
-                <iframe src="https://www.canva.com/design/DAG2rrCQ0R0/3JiLo_kKGE3j-C8Fh59IDg/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+      <!-- Slide 3 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Pre-School Graduation</h3>
+        <div class="iframe-container shadow-2xl">
+          <iframe data-src="https://www.canva.com/design/DAG2rrCQ0R0/3JiLo_kKGE3j-C8Fh59IDg/view?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
 
-        <!-- Slide 4 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Perfumes Catalogue</h3>
-            <div class="relative w-full" style="padding-top:100%;">
-                <iframe src="https://www.canva.com/design/DAGsnFvMecU/ExefSlf5ELISz5NspDA1hw/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+      <!-- Slide 4 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Perfumes Catalogue</h3>
+        <div class="iframe-container shadow-2xl" style="aspect-ratio:1/1;">
+          <iframe data-src="https://www.canva.com/design/DAGsnFvMecU/ExefSlf5ELISz5NspDA1hw/view?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
 
-        <!-- Slide 5 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Local Restaurant Menu</h3>
-            <div class="relative w-full" style="padding-top:141.4286%;">
-                <iframe src="https://www.canva.com/design/DAG1EQrdOaw/f4ne_Jmax4sh-f1ZNaGTHA/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+      <!-- Slide 5 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Local Restaurant Menu</h3>
+        <div class="iframe-container shadow-2xl">
+          <iframe data-src="https://www.canva.com/design/DAG1EQrdOaw/f4ne_Jmax4sh-f1ZNaGTHA/view?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
 
-        <!-- Slide 6 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Birthday Invitation</h3>
-            <div class="relative w-full" style="padding-top:140.9524%;">
-                <iframe src="https://www.canva.com/design/DAG4qq-BdYI/aOqyF3i8FN5_jG3F0fRlew/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+      <!-- Slide 6 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Birthday Invitation</h3>
+        <div class="iframe-container shadow-2xl">
+          <iframe data-src="https://www.canva.com/design/DAG4qq-BdYI/aOqyF3i8FN5_jG3F0fRlew/view?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
 
-        <!-- Slide 7 -->
-        <div class="slide glass-card p-4">
-            <h3 class="text-xl font-bold text-white mb-2">Church Poster</h3>
-            <div class="relative w-full" style="padding-top:125%;">
-                <iframe src="https://www.canva.com/design/DAG3BScPEH8/3qaigsUFW0dmJvyiTX6_eQ/view?embed" style="position:absolute; width:100%; height:100%; top:0; left:0; border:none;" allowfullscreen></iframe>
-            </div>
+      <!-- Slide 7 -->
+      <div class="slide glass rounded-2xl p-4">
+        <h3 class="text-lg font-bold text-white mb-3">Church Poster</h3>
+        <div class="iframe-container shadow-2xl" style="aspect-ratio:4/5;">
+          <iframe data-src="https://www.canva.com/design/DAG3BScPEH8/3qaigsUFW0dmJvyiTX6_eQ/view?embed" allow="fullscreen" loading="lazy"></iframe>
         </div>
+      </div>
     </div>
-</main>
 
-<!-- Footer -->
-<footer class="mt-auto py-8 text-center text-gray-500 text-xs">
-    <p>&copy; 2025 Sisonke Edutech</p>
-</footer>
+    <!-- Dots Navigation -->
+    <div class="dots" id="dots"></div>
+  </main>
 
+  <footer class="py-8 text-center text-gray-500 text-xs">
+    © 2025 Sisonke Edutech • Digital Designs Division
+  </footer>
+
+  <!-- Lazy load iframes + dots -->
+  <script>
+    const slider = document.getElementById('slider');
+    const dotsContainer = document.getElementById('dots');
+    const iframes = document.querySelectorAll('iframe[data-src]');
+
+    // Create dots
+    iframes.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dotsContainer.appendChild(dot);
+    });
+    const dots = document.querySelectorAll('.dot');
+
+    // Intersection Observer for lazy loading iframes
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = entry.target;
+          iframe.src = iframe.dataset.src;
+          iframe.classList.add('loaded');
+          observer.unobserve(iframe);
+        }
+      });
+    }, { root: slider, threshold: 0.3 });
+
+    iframes.forEach(iframe => observer.observe(iframe));
+
+    // Update active dot on scroll
+    slider.addEventListener('scroll', () => {
+      const scrollLeft = slider.scrollLeft;
+      const slideWidth = slider.querySelector('.slide').offsetWidth + 16; // + gap
+      const index = Math.round(scrollLeft / slideWidth);
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    });
+  </script>
 </body>
-    </html>
+</html>
